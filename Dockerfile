@@ -72,5 +72,7 @@ RUN cp .env.example .env
 RUN php artisan key:generate
 RUN php artisan config:clear
 
+RUN ls public/
+
 EXPOSE 80
 CMD ["supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
