@@ -78,6 +78,6 @@ RUN ls public/
 RUN php -v
 RUN nginx -V
 
+EXPOSE 80
 CMD ["supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
 
-EXPOSE 80
