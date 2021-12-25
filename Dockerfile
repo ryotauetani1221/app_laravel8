@@ -71,6 +71,8 @@ RUN chown -R nobody:nobody /var/www/html/storage
 RUN cp .env.example .env
 RUN php artisan key:generate
 RUN php artisan config:clear
+RUN php artisan config:cache
+RUN php artisan route:cache
 
 RUN ls public/
 
