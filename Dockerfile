@@ -75,6 +75,9 @@ RUN php artisan config:cache
 RUN php artisan route:cache
 
 RUN ls public/
+RUN php -v
+RUN nginx -V
+
+CMD ["supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
 
 EXPOSE 80
-CMD ["supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
