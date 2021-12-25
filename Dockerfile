@@ -68,6 +68,7 @@ RUN ln -sf /dev/stderr /var/log/nginx/error.log
 COPY . .
 RUN composer install --no-dev
 RUN chown -R nobody:nobody /var/www/html/storage
+RUN cp .env.example .env
 RUN php artisan key:generate
 RUN php artisan config:clear
 
